@@ -41,6 +41,9 @@ public class LineComparison {
 		// Equality of lines
 		equalityOfLines(x1, y1, x2, y2, x3, y3, x4, y4);
 
+		// Comparison of lines
+		compareLines(x1, y1, x2, y2, x3, y3, x4, y4);
+
 	}
 
 	/*
@@ -80,6 +83,34 @@ public class LineComparison {
 		} else {
 			System.out.println("Line 1 is not equal to Line 2");
 			return false;
+		}
+	}
+
+	/*
+	 * @params: x1, y1, x2, y2, x3, y3, x4, y4
+	 * 
+	 * @return: boolean value
+	 * 
+	 * @Description: compare two lines
+	 */
+
+	public static int compareLines(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+
+		double lengthOfLine1 = lengthOfLine(x1, y1, x2, y2);
+		double lengthOfLine2 = lengthOfLine(x3, y3, x4, y4);
+
+		String str1 = String.valueOf(lengthOfLine1);
+		String str2 = String.valueOf(lengthOfLine2);
+
+		if (str1.compareTo(str2) == 0) {
+			System.out.println("Line 1 is equal to Line 2");
+			return 0;
+		} else if (str1.compareTo(str2) > 0) {
+			System.out.println("Line 1 is greater than Line 2");
+			return 1;
+		} else {
+			System.out.println("Line 1 is less than Line 2");
+			return -1;
 		}
 	}
 
